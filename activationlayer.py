@@ -13,5 +13,5 @@ class ActivationLayer(BaseLayer):
     
     def backward_prop(self, dE_dY, learning_rate=0.01):
         #Return multiplication of activation derivative and ∂E/∂Y as there is not parameters to optimize in this layer
-        return self.activation_derivative(self.input) * dE_dY
+        return self.activation_derivative(self.x) * dE_dY
         
