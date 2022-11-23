@@ -17,7 +17,7 @@ class Dense(BaseLayer):
         self.y = numpy.dot(self.x, self.weights) + self.bias
         return self.y
 
-    def backward_prop(self, dE_dY, learning_rate=0.01):
+    def backward_prop(self, dE_dY, learning_rate):
         #Calculate ∂E/∂W --> ∂E/∂W = ∂Y/∂W * ∂E/∂Y
         dE_dW = numpy.dot(self.x.T, dE_dY) #Note: T is transpose (flips shape of matrix)
 
