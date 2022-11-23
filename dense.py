@@ -11,14 +11,15 @@ class Dense(BaseLayer):
 
     def forward_prop(self, x):
         #Save input for backpropagation
-        self.input = x
+        self.x = x
 
         #Return output based on given input by doing the dot product between the input and weights plus the bias
-        return numpy.dot(x, self.weights) + self.bias
+        self.y = numpy.dot(self.x, self.weights) + self.bias
+        return self.y
 
     def backward_prop(self, dE_dY, learning_rate=0.01):
         #Calculate ∂E/∂W --> ∂E/∂W = ∂Y/∂W * ∂E/∂Y
-        dE_dW = numpy.dot(self.input.T, dE_dY) #Note: T is transpose (flips shape of matrix)
+        dE_dW = numpy.dot(self.x.T, dE_dY) #Note: T is transpose (flips shape of matrix)
 
         #Calculate ∂E/∂X --> ∂E/∂X = ∂E/∂Y * ∂Y/∂X
         dE_dX = numpy.dot(dE_dY, self.weights.T)
