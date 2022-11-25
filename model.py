@@ -21,13 +21,11 @@ class Model():
             output.append(singleOutput)
 
         return output
-
+    
     def print_error(self, epoch, error):
         print(f"Loss of Epoch #{epoch}: {error}")
 
     def fit(self, x, y, loss, loss_derivative, epochs=1000, learning_rate=0.01, verbosity=1):
-        #Needed for Backpropogation
-        reversed_layers = reversed(self.layers)
 
         for i in range(epochs):
             #Keeps track of error for current epoch for potential display at the end (depends on level of verbosity)
@@ -35,7 +33,7 @@ class Model():
 
             for j in range(len(x)):
                 #Keeps track of current output (starts with the input layer)
-                output = input[j]
+                output = x[j]
 
                 #Forward propogate each layer using the output of the last layer
                 for layer in self.layers:
@@ -46,9 +44,8 @@ class Model():
 
                 #Backpropogation: Update weights and biases for each layer using derivative of error with respect to the output
                 dE_dY = loss_derivative(y[j], output)
-
                 #Loop backwards over layers as ∂E/∂X of the last layer is ∂E/∂Y of the layer before it
-                for layer in reversed_layers:
+                for layer in reversed(self.layers):
                     dE_dY = layer.backward_prop(dE_dY, learning_rate)
 
             average_error = total_error / len(x)
