@@ -1,4 +1,4 @@
-from baselayer import BaseLayer
+from base_layer import BaseLayer
 import numpy
 
 class Dense(BaseLayer):
