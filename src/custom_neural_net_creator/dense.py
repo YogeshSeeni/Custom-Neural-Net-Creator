@@ -1,7 +1,6 @@
-from base_layer import BaseLayer
 import numpy
 
-class Dense(BaseLayer):
+class Dense():
     def __init__(self, input_shape, output_shape):
         # Randomly initialize weights for each connection between input and output (-0.5 to 0.5)
         self.weights = numpy.random.rand(input_shape, output_shape) - 0.5 

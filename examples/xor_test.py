@@ -1,12 +1,3 @@
-# Custom Neural Net Creator
-
-This module allows users to simply create neural networks by adding the types of layers needed.
-
-## Example
-
-This is an example of how to use this module on a the classic XOR Problem
-
-```python
 import numpy as np
 
 from custom_neural_net_creator.model import Model
@@ -46,4 +37,3 @@ print(y[0:3])
 # [[1]]
 
 # [[1]]]
-```

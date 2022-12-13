@@ -1,3 +1,16 @@
+Metadata-Version: 2.1
+Name: custom-neural-net-creator
+Version: 1.0
+Summary: A Neural Network Module to create Custom Dense Neural Networks
+Home-page: https://github.com/YogeshSeeni/NeuralNetworkModule
+Author: Yogesh Seenichamy
+Author-email: yogeshseeni60@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+
 # Custom Neural Net Creator
 
 This module allows users to simply create neural networks by adding the types of layers needed.

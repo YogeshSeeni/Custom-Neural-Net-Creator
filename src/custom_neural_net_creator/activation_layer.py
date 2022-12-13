@@ -1,6 +1,4 @@
-from base_layer import BaseLayer
-
-class ActivationLayer(BaseLayer):
+class ActivationLayer():
     def __init__(self, activation_function, activation_derivative):
         self.activation_function = activation_function
         self.activation_derivative = activation_derivative

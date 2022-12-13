@@ -1,0 +1,16 @@
+README.md
+README.rst
+setup.cfg
+setup.py
+src/custom_neural_net_creator/__init__.py
+src/custom_neural_net_creator/activation_functions.py
+src/custom_neural_net_creator/activation_layer.py
+src/custom_neural_net_creator/base_layer.py
+src/custom_neural_net_creator/dense.py
+src/custom_neural_net_creator/loss_functions.py
+src/custom_neural_net_creator/model.py
+src/custom_neural_net_creator.egg-info/PKG-INFO
+src/custom_neural_net_creator.egg-info/SOURCES.txt
+src/custom_neural_net_creator.egg-info/dependency_links.txt
+src/custom_neural_net_creator.egg-info/requires.txt
+src/custom_neural_net_creator.egg-info/top_level.txt
