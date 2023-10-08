@@ -1,5 +1,3 @@
-import numpy as np
-
 from custom_neural_net_creator.model import Model
 from custom_neural_net_creator.dense import Dense
 from custom_neural_net_creator.activation_layer import ActivationLayer

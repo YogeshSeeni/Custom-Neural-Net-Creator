@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='custom_neural_net_creator',
-    version='1.2',
+    version='1.3',
     license='MIT',
     author="Yogesh Seenichamy",
     author_email='yogeshseeni60@gmail.com',

@@ -1,3 +1,5 @@
+import numpy as np
+
 class Model():
     def __init__(self):
         self.layers = []
@@ -26,8 +28,8 @@ class Model():
         print(f"Loss of Epoch #{epoch}: {error}")
 
     def fit(self, x, y, loss, loss_derivative, epochs=1000, learning_rate=0.01, verbosity=1):
-        x = [[i] for i in x]
-        y = [[i] for i in y]
+        x = np.array([[i] for i in x])
+        y = np.array([[i] for i in y])
 
         for i in range(epochs):
             #Keeps track of error for current epoch for potential display at the end (depends on level of verbosity)
