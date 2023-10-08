@@ -21,8 +21,8 @@ Problem
    from custom_neural_net_creator.loss_functions import mean_squared_error, mean_squared_error_derivative
 
    #Input data for XOR
-   x = np.array([[[0,0]], [[0,1]], [[1,0]], [[1,1]]])
-   y = np.array([[[0]], [[1]], [[1]], [[0]]])
+   x = np.array([[0,0], [0,1], [1,0], [1,1]])
+   y = np.array([[0], [1], [1], [0]])
 
    model = Model()
 
