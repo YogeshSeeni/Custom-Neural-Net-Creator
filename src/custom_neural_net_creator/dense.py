@@ -1,14 +1,15 @@
 import numpy
+import numpy.typing as npt
 
 class Dense():
-    def __init__(self, input_shape, output_shape):
+    def __init__(self, input_shape: int, output_shape: int) -> None:
         # Randomly initialize weights for each connection between input and output (-0.5 to 0.5)
         self.weights = numpy.random.rand(input_shape, output_shape) - 0.5 
 
         #Initialize a 0 for each output neuron as a bias
         self.bias = numpy.zeros((1, output_shape))
 
-    def forward_prop(self, x):
+    def forward_prop(self, x: npt.NDArray) -> npt.NDArray:
         #Save input for backpropagation
         self.x = x
 
@@ -16,7 +17,7 @@ class Dense():
         self.y = numpy.dot(self.x, self.weights) + self.bias
         return self.y
 
-    def backward_prop(self, dE_dY, learning_rate):
+    def backward_prop(self, dE_dY: npt.NDArray, learning_rate: float) -> npt.NDArray:
         #Calculate ∂E/∂W --> ∂E/∂W = ∂Y/∂W * ∂E/∂Y
         dE_dW = numpy.dot(self.x.T, dE_dY) #Note: T is transpose (flips shape of matrix)
 

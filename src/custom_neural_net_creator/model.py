@@ -1,14 +1,19 @@
 import numpy as np
+from typing import List, Union, Optional
+from dense import Dense
+from activation_layer import ActivationLayer
+from activation_functions import relu, relu_derivative, sigmoid, sigmoid_derivative, tanh, tanh_prime
+from loss_functions import mean_squared_error, mean_squared_error_derivative
 
 class Model():
-    def __init__(self):
+    def __init__(self) -> None:
         self.layers = []
 
-    def add(self, layer):
+    def add(self, layer: Union[Dense, ActivationLayer]) -> None:
         self.layers.append(layer)
 
-    def predict(self, input):
-        #Stores list of all outputs for each input
+    def predict(self, input: List) -> List:
+        #Stores list of all outputs for each input 
         output = []
 
         for i in range(len(input)):
@@ -24,10 +29,10 @@ class Model():
 
         return output
     
-    def print_error(self, epoch, error):
+    def print_error(self, epoch: int, error: float) -> None:
         print(f"Loss of Epoch #{epoch}: {error}")
 
-    def fit(self, x, y, loss, loss_derivative, epochs=1000, learning_rate=0.01, verbosity=1):
+    def fit(self, x: List, y: List, loss: Union[relu, sigmoid, tanh], loss_derivative: Union[relu_derivative, sigmoid_derivative, tanh_prime], epochs: Optional[int]=100, learning_rate: Optional[float]=0.01, verbosity: Optional[int]=1):
         x = np.array([[i] for i in x])
         y = np.array([[i] for i in y])
 
