@@ -6,16 +6,14 @@ from loss_functions import mean_squared_error, mean_squared_error_derivative
 
 class Model():
     def __init__(self) -> None:
-        """
-        Initialize a neural network model.
+        """Initialize a neural network model.
 
         This class represents a neural network model with a list of layers.
         """
         self.layers = []
 
     def add(self, layer: Union[Dense, ActivationLayer]) -> None:
-        """
-        Adds a layer to neural network model.
+        """Adds a layer to neural network model.
 
         This method appends a layer, which can be either a Dense layer or Activation Layer,
         to the list of layers in the neural network model.
@@ -26,8 +24,7 @@ class Model():
         self.layers.append(layer)
 
     def predict(self, input: List) -> List:
-        """
-        Predicts the output for a given input using the neural network model.
+        """Predicts the output for a given input using the neural network model.
         
         This method takes a list of input data and computes predictions using the neural network model. 
         It iterates through each input, performing forward propagation through the network's layers 
@@ -56,8 +53,7 @@ class Model():
         return output
     
     def print_error(self, epoch: int, error: float) -> None:
-        """
-        Prints the error for a given epoch.
+        """Prints the error for a given epoch.
 
         This method prints the loss (error) for a specific training epoch. It is typically used for monitoring
         the training progress. The `epoch` parameter specifies the current epoch number, and `error` is the
@@ -70,8 +66,7 @@ class Model():
         print(f"Loss of Epoch #{epoch}: {error}")
 
     def fit(self, x: List, y: List, loss: mean_squared_error, loss_derivative: mean_squared_error_derivative, epochs: Optional[int]=100, learning_rate: Optional[float]=0.01, verbosity: Optional[int]=1):
-        """
-        Trains the neural network model on the given data.
+        """Trains the neural network model on the given data.
 
         This method trains the neural network model using the specified input data `x`, target data `y`, 
         loss function `loss`, and its derivative `loss_derivative`. It performs a number of training epochs

@@ -3,8 +3,7 @@ import numpy.typing as npt
 
 class Dense():
     def __init__(self, input_shape: int, output_shape: int) -> None:
-        """
-        Intialize a Dense layer.
+        """Intialize a Dense layer.
 
         This constructor initializes a Dense layer with randomly initialized weights and biases.
         The `input_shape` parameter specifies the number of input features, and the `output_shape`
@@ -22,8 +21,7 @@ class Dense():
         self.bias = numpy.zeros((1, output_shape))
 
     def forward_prop(self, x: npt.NDArray) -> npt.NDArray:
-        """
-        Perform forward propagation through the Dense layer.
+        """Perform forward propagation through the Dense layer.
 
         This method computes the forward propagation of input data through the Dense layer. 
         The output is calculated by performing a dot product between the input and the layer's weights, 
@@ -44,8 +42,7 @@ class Dense():
         return self.y
 
     def backward_prop(self, dE_dY: npt.NDArray, learning_rate: float) -> npt.NDArray:
-        """
-        Perform backward propagation through the Dense layer and update weights and biases.
+        """Perform backward propagation through the Dense layer and update weights and biases.
 
         This method performs backward propagation through the Dense layer. It calculates the gradients
         of the error with respect to the layer's weights, biases, and input. The gradients are then used

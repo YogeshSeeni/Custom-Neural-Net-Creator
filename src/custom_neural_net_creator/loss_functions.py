@@ -2,8 +2,7 @@ import numpy
 import numpy.typing as npt
 
 def mean_squared_error(actual: npt.NDArray, prediction: npt.NDArray) -> float:
-    """
-    Calculate the mean squared error between acuatl and predicted values.
+    """Calculate the mean squared error between acuatl and predicted values.
 
     This function computes the mean squared error (MSE) between the actual and predicted values.
     It takes two NumPy arrays, `actual` and `prediction`, and calculates the squared difference 
@@ -20,8 +19,7 @@ def mean_squared_error(actual: npt.NDArray, prediction: npt.NDArray) -> float:
     return numpy.mean(numpy.power(actual - prediction, 2))
 
 def mean_squared_error_derivative(actual: npt.NDArray, prediction: npt.NDArray) -> float:
-    """
-    Calculate the derivative of the mean squared error with respect to predicted values.
+    """Calculate the derivative of the mean squared error with respect to predicted values.
 
     This function computes the mean squared error (MSE) between the actual and predicted values.
     It takes two NumPy arrays, `actual` and `prediction`, and calculates the squared difference 

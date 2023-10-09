@@ -4,8 +4,7 @@ import numpy.typing as npt
 
 class ActivationLayer():
     def __init__(self, activation_function: Union[relu, sigmoid, tanh], activation_derivative: Union[relu_derivative, sigmoid_derivative, tanh_prime]):
-        """
-        Iniitalize an Activation Layer with a specified activation function.
+        """Iniitalize an Activation Layer with a specified activation function.
 
         Args:
             activation_function (Union[relu, sigmoid, tanh]): The activation function to be added.
@@ -15,8 +14,7 @@ class ActivationLayer():
         self.activation_derivative = activation_derivative
 
     def forward_prop(self, x: npt.NDArray) -> npt.NDArray:
-        """
-        Perform forward propagation through the Activation Layer.
+        """Perform forward propagation through the Activation Layer.
 
         This method computes the forward propagation of input data through the Activation Layer. It saves
         the input `x` for later use in backpropagation and passes the input through the specified activation
@@ -34,8 +32,7 @@ class ActivationLayer():
         return self.y
     
     def backward_prop(self, dE_dY: npt.NDArray, learning_rate: float) -> npt.NDArray:
-        """
-        This method performs backward propagation through the Activation Layer. It computes the gradient
+        """This method performs backward propagation through the Activation Layer. It computes the gradient
         of the error with respect to the layer's input by multiplying the activation derivative with
         ∂E/∂Y. Since there are no parameters to optimize in this layer, it directly returns the gradient
         of the error with respect to the input, which can be used for backpropagation in previous layers.
