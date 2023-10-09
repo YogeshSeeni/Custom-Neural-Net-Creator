@@ -2,17 +2,43 @@ import numpy as np
 from typing import List, Union, Optional
 from dense import Dense
 from activation_layer import ActivationLayer
-from activation_functions import relu, relu_derivative, sigmoid, sigmoid_derivative, tanh, tanh_prime
 from loss_functions import mean_squared_error, mean_squared_error_derivative
 
 class Model():
     def __init__(self) -> None:
+        """
+        Initialize a neural network model.
+
+        This class represents a neural network model with a list of layers.
+        """
         self.layers = []
 
     def add(self, layer: Union[Dense, ActivationLayer]) -> None:
+        """
+        Adds a layer to neural network model.
+
+        This method appends a layer, which can be either a Dense layer or Activation Layer,
+        to the list of layers in the neural network model.
+        
+        Args:
+            layer (Union[Dense, ActivationLayer]): Layer to Be Added to Neural Network
+        """
         self.layers.append(layer)
 
     def predict(self, input: List) -> List:
+        """
+        Predicts the output for a given input using the neural network model.
+        
+        This method takes a list of input data and computes predictions using the neural network model. 
+        It iterates through each input, performing forward propagation through the network's layers 
+        and collecting the output. The predictions are stored in a list and returned.
+
+        Args:
+            input (List): Input data to make predictions on.
+
+        Returns:
+            List: List of predictions for the input data.
+        """
         #Stores list of all outputs for each input 
         output = []
 
@@ -30,9 +56,42 @@ class Model():
         return output
     
     def print_error(self, epoch: int, error: float) -> None:
+        """
+        Prints the error for a given epoch.
+
+        This method prints the loss (error) for a specific training epoch. It is typically used for monitoring
+        the training progress. The `epoch` parameter specifies the current epoch number, and `error` is the
+        calculated loss for that epoch.
+
+        Args:
+            epoch (int): The epoch number.
+            error (float): The error value for the epoch.
+        """
         print(f"Loss of Epoch #{epoch}: {error}")
 
-    def fit(self, x: List, y: List, loss: Union[relu, sigmoid, tanh], loss_derivative: Union[relu_derivative, sigmoid_derivative, tanh_prime], epochs: Optional[int]=100, learning_rate: Optional[float]=0.01, verbosity: Optional[int]=1):
+    def fit(self, x: List, y: List, loss: mean_squared_error, loss_derivative: mean_squared_error_derivative, epochs: Optional[int]=100, learning_rate: Optional[float]=0.01, verbosity: Optional[int]=1):
+        """
+        Trains the neural network model on the given data.
+
+        This method trains the neural network model using the specified input data `x`, target data `y`, 
+        loss function `loss`, and its derivative `loss_derivative`. It performs a number of training epochs
+        specified by the `epochs` parameter, updating the model's weights and biases through backpropagation
+        with gradient descent.
+
+        The `learning_rate` parameter controls the step size during weight updates. The `verbosity` parameter
+        determines the level of output during training, with options to print loss values at different intervals.
+
+        Args:
+            x (List): Input data for training.
+            y (List): Target data for training.
+            loss (mean_squared_error): The loss function used for training.
+            loss_derivative (mean_squared_error_derivative): The derivative of the loss function.
+            epochs (Optional[int], optional): Number of training epochs. Defaults to 100.
+            learning_rate (Optional[float], optional): Learning rate for gradient descent. Defaults to 0.01.
+            verbosity (Optional[int], optional): Verbosity level for printing training progress. 
+                                                  0 - No output, 1 - Print every 100 epochs, 
+                                                  2 - Print every 10 epochs. Defaults to 1.
+        """
         x = np.array([[i] for i in x])
         y = np.array([[i] for i in y])
 

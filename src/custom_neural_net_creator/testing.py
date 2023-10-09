@@ -1,7 +1,7 @@
 from model import Model
 from dense import Dense
 from activation_layer import ActivationLayer
-from activation_functions import relu, relu_derivative, sigmoid, sigmoid_derivative, tanh, tanh_prime
+from custom_neural_net_creator.activation_functions import relu, relu_derivative, sigmoid, sigmoid_derivative, tanh, tanh_prime
 from loss_functions import mean_squared_error, mean_squared_error_derivative
 
 #Input data for XOR
