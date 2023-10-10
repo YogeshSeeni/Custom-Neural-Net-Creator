@@ -14,7 +14,7 @@ that can learn from large datasets and make predictions based on them.
 
 Forward Propagation
 -------------------
-.. figure:: images/perceptron.png
+.. figure:: images/perceptrons.png
    :class: with-border
 
    **Forward Propagation in a Neural Network**
