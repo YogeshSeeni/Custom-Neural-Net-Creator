@@ -1,5 +1,6 @@
 # Custom Neural Net Creator
-
+[![Upload Python Package](https://github.com/YogeshSeeni/NeuralNetworkModule/actions/workflows/python-publish.yml/badge.svg)](https://github.com/YogeshSeeni/NeuralNetworkModule/actions/workflows/python-publish.yml)
+[![Documentation Status](https://readthedocs.org/projects/custom-neural-net-creator/badge/?version=latest)](https://custom-neural-net-creator.readthedocs.io/en/latest/?badge=latest)
 ## Overview
 
 [Custom-Neural-Net-Creator](https://pypi.org/project/custom-neural-net-creator/) is an easy, to use tool that allows developers and machine learning enthusiasts to create and deploy their own custom deep neural networks for various purposes. This innovative tool makes the power of learning more accessible, than before.
