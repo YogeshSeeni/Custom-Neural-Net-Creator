@@ -1,0 +1,4 @@
+numpy
+custom_neural_net_creator
+sphinx
+furo
