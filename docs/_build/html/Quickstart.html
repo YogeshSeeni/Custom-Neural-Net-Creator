@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -193,7 +193,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -201,6 +201,86 @@
         <article role="main">
           <section id="quickstart">
 <h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading">#</a></h1>
+<p>Welcome to the quickstart guide for the <cite>custom-neural-net-creator</cite> module, a Python library for creating custom neural networks. In this guide, you will learn how to create a simple neural network for the XOR problem.</p>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>Before you get started, ensure you have the following prerequisites installed:</p>
+<ul class="simple">
+<li><p>Python 3.x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">numpy</span></code> library</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">custom-neural-net-creator</span></code> module (make sure it’s properly installed).</p></li>
+</ul>
+</section>
+<section id="importing-required-libraries-and-modules">
+<h2>Importing Required Libraries and Modules<a class="headerlink" href="#importing-required-libraries-and-modules" title="Link to this heading">#</a></h2>
+<p>To begin, import the necessary libraries and modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">custom_neural_net_creator.model</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">custom_neural_net_creator.dense</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">custom_neural_net_creator.activation_layer</span> <span class="kn">import</span> <span class="n">ActivationLayer</span>
+<span class="kn">from</span> <span class="nn">custom_neural_net_creator.activation_functions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">relu</span><span class="p">,</span> <span class="n">relu_derivative</span><span class="p">,</span> <span class="n">sigmoid</span><span class="p">,</span> <span class="n">sigmoid_derivative</span><span class="p">,</span> <span class="n">tanh</span><span class="p">,</span> <span class="n">tanh_prime</span>
+<span class="p">)</span>
+<span class="kn">from</span> <span class="nn">custom_neural_net_creator.loss_functions</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_squared_error_derivative</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="input-data-for-xor-problem">
+<h2>Input Data for XOR Problem<a class="headerlink" href="#input-data-for-xor-problem" title="Link to this heading">#</a></h2>
+<p>Define the input data and target values for the XOR problem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-the-neural-network-model">
+<h2>Creating the Neural Network Model<a class="headerlink" href="#creating-the-neural-network-model" title="Link to this heading">#</a></h2>
+<p>Now, let’s create the neural network model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">()</span>
+
+<span class="c1"># Adding the first hidden layer with 10 neurons and ReLU activation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ActivationLayer</span><span class="p">(</span><span class="n">relu</span><span class="p">,</span> <span class="n">relu_derivative</span><span class="p">))</span>
+
+<span class="c1"># Adding the second hidden layer with 10 neurons and ReLU activation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ActivationLayer</span><span class="p">(</span><span class="n">relu</span><span class="p">,</span> <span class="n">relu_derivative</span><span class="p">))</span>
+
+<span class="c1"># Adding the output layer with 1 neuron and Sigmoid activation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ActivationLayer</span><span class="p">(</span><span class="n">sigmoid</span><span class="p">,</span> <span class="n">sigmoid_derivative</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="training-the-model">
+<h2>Training the Model<a class="headerlink" href="#training-the-model" title="Link to this heading">#</a></h2>
+<p>To train the model on the XOR problem, use the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">mean_squared_error_derivative</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>After training, you will see the loss for each epoch, and the final loss value.</p>
+</section>
+<section id="testing-the-model">
+<h2>Testing the Model<a class="headerlink" href="#testing-the-model" title="Link to this heading">#</a></h2>
+<p>To test the trained model, make predictions on a subset of the input data:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">predictions</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You will get the model’s predictions for the input data.</p>
+<div class="highlight-plaintext notranslate"><div class="highlight"><pre><span></span>Predicted:
+[array([[0.02610931]]), array([[0.98778214]]), array([[0.9873547]])]
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Congratulations! You have successfully created and trained a custom neural network using the <cite>custom-neural-net-creator</cite> module. You can now integrate this module into your own projects and experiments for more complex neural network tasks. Explore the module’s documentation for advanced features and customization options.</p>
+</section>
 </section>
 
         </article>
@@ -246,8 +326,33 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Quickstart</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#importing-required-libraries-and-modules">Importing Required Libraries and Modules</a></li>
+<li><a class="reference internal" href="#input-data-for-xor-problem">Input Data for XOR Problem</a></li>
+<li><a class="reference internal" href="#creating-the-neural-network-model">Creating the Neural Network Model</a></li>
+<li><a class="reference internal" href="#training-the-model">Training the Model</a></li>
+<li><a class="reference internal" href="#testing-the-model">Testing the Model</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
