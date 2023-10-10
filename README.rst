@@ -1,15 +1,23 @@
-Custom Neural Net Creator
-=========================
+Welcome to Custom-Neural-Net-Creator
+====================================
 
-This module allows users to simply create neural networks by adding the
-types of layers needed.
+Overview
+--------
+Custom-Neural-Net-Creator is an easy, to use tool that allows developers and machine learning enthusiasts to create and deploy their own custom deep neural networks for various purposes. This innovative tool makes the power of learning more accessible, than before.
 
-Example
--------
+Neural networks are advanced machine learning algorithms that can detect complex patterns in large amounts of 
+data and make predictions based on the information they have been trained on. 
+These systems are designed to mimic the structure of the human brain, with interconnected layers of 
+“neurons” that transmit information to each other. 
+An artificial neural network typically consists of an input layer, 
+one or more hidden layers, and an output layer, each with a specific number of neurons connected to 
+preceding and following layers. Deep neural networks are a subtype of artificial neural networks 
+that can learn from large datasets and make predictions based on them.
 
-This is an example of how to use this module on a the classic XOR
-Problem
+To view more information visit the documentation.
 
+Quickstart
+----------
 .. code:: python
 
    import numpy as np

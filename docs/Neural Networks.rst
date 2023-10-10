@@ -30,7 +30,8 @@ the SoftMax or sigmoid activation function is applied depending on the number of
 
 Backward Propagation
 --------------------
-.. image:: images/Renset-56LossLandscape.png
+.. figure:: images/landscape.png
+   :width: 400px
    :class: with-border
 
    **Loss Landscape of VGG-56 Neural Network**

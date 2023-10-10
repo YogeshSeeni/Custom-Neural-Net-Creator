@@ -32,6 +32,7 @@ Indices
 .. toctree::
    :maxdepth: 2
 
+   Homepage <index>
    Quickstart
    Neural Networks
    API References

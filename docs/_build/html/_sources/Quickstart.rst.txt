@@ -86,7 +86,7 @@ To test the trained model, make predictions on a subset of the input data:
 
 You will get the model's predictions for the input data.
 
-.. code-block:: plaintext
+.. code-block:: python
 
    Predicted:
    [array([[0.02610931]]), array([[0.98778214]]), array([[0.9873547]])]
