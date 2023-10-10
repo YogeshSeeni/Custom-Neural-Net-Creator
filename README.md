@@ -1,6 +1,19 @@
 # Custom Neural Net Creator
 
-This module allows users to simply create neural networks by adding the types of layers needed.
+## Overview
+
+[Custom-Neural-Net-Creator](https://pypi.org/project/custom-neural-net-creator/) is an easy, to use tool that allows developers and machine learning enthusiasts to create and deploy their own custom deep neural networks for various purposes. This innovative tool makes the power of learning more accessible, than before.
+
+Neural networks are advanced machine learning algorithms that can detect complex patterns in large amounts of 
+data and make predictions based on the information they have been trained on. 
+These systems are designed to mimic the structure of the human brain, with interconnected layers of 
+“neurons” that transmit information to each other. 
+An artificial neural network typically consists of an input layer, 
+one or more hidden layers, and an output layer, each with a specific number of neurons connected to 
+preceding and following layers. Deep neural networks are a subtype of artificial neural networks 
+that can learn from large datasets and make predictions based on them.
+
+To view more information visit the [documentation](https://custom-neural-net-creator.readthedocs.io/en/latest/).
 
 ## Example
 
@@ -16,8 +29,8 @@ from custom_neural_net_creator.activation_functions import relu, relu_derivative
 from custom_neural_net_creator.loss_functions import mean_squared_error, mean_squared_error_derivative
 
 #Input data for XOR
-x = np.array([[[0,0]], [[0,1]], [[1,0]], [[1,1]]])
-y = np.array([[[0]], [[1]], [[1]], [[0]]])
+x = [[0,0], [0,1], [1,0], [1,1]]
+y = [[0], [1], [1], [0]]
 
 model = Model()
 

@@ -10,7 +10,7 @@ project_urls = {
 
 setup(
     name='custom_neural_net_creator',
-    version='1.4',
+    version='2.0',
     license='MIT',
     author="Yogesh Seenichamy",
     author_email='yogeshseeni60@gmail.com',
