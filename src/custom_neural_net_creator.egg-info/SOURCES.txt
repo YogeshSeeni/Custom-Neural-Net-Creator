@@ -5,7 +5,6 @@ setup.py
 src/custom_neural_net_creator/__init__.py
 src/custom_neural_net_creator/activation_functions.py
 src/custom_neural_net_creator/activation_layer.py
-src/custom_neural_net_creator/base_layer.py
 src/custom_neural_net_creator/dense.py
 src/custom_neural_net_creator/loss_functions.py
 src/custom_neural_net_creator/model.py

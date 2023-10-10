@@ -1,378 +1,260 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="API Reference" href="API%20References.html" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Custom-Neural-Net-Creator’s documentation! &mdash; Custom-Neural-Net-Creator 2.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+    <!-- Generated with Sphinx 7.2.6 and Furo 2023.09.10 -->
+        <title>Custom-Neural-Net-Creator 2.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=60dbed4a"></script>
-        <script src="_static/doctools.js?v=888ff710"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
-</head>
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-          
-          
-          <a href="#" class="icon icon-home">
-            Custom-Neural-Net-Creator
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">Welcome to Custom-Neural-Net-Creator’s documentation!</a></li>
-<li><a class="reference internal" href="#custom-neural-net-creator-package">custom_neural_net_creator package</a><ul>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-src.custom_neural_net_creator.activation_functions">custom_neural_net_creator.activation_functions module</a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.relu"><code class="docutils literal notranslate"><span class="pre">relu()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.relu_derivative"><code class="docutils literal notranslate"><span class="pre">relu_derivative()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.sigmoid"><code class="docutils literal notranslate"><span class="pre">sigmoid()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.sigmoid_derivative"><code class="docutils literal notranslate"><span class="pre">sigmoid_derivative()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.tanh"><code class="docutils literal notranslate"><span class="pre">tanh()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_functions.tanh_prime"><code class="docutils literal notranslate"><span class="pre">tanh_prime()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-src.custom_neural_net_creator.activation_layer">custom_neural_net_creator.activation_layer module</a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer"><code class="docutils literal notranslate"><span class="pre">ActivationLayer</span></code></a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer.backward_prop"><code class="docutils literal notranslate"><span class="pre">ActivationLayer.backward_prop()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer.forward_prop"><code class="docutils literal notranslate"><span class="pre">ActivationLayer.forward_prop()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-src.custom_neural_net_creator.dense">custom_neural_net_creator.dense module</a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.dense.Dense"><code class="docutils literal notranslate"><span class="pre">Dense</span></code></a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.dense.Dense.backward_prop"><code class="docutils literal notranslate"><span class="pre">Dense.backward_prop()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.dense.Dense.forward_prop"><code class="docutils literal notranslate"><span class="pre">Dense.forward_prop()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-src.custom_neural_net_creator.loss_functions">custom_neural_net_creator.loss_functions module</a><ul>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.loss_functions.mean_squared_error"><code class="docutils literal notranslate"><span class="pre">mean_squared_error()</span></code></a></li>
-<li><a class="reference internal" href="#src.custom_neural_net_creator.loss_functions.mean_squared_error_derivative"><code class="docutils literal notranslate"><span class="pre">mean_squared_error_derivative()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#custom-neural-net-creator-model-module">custom_neural_net_creator.model module</a></li>
-<li><a class="reference internal" href="#module-src.custom_neural_net_creator">Module contents</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-</div>
-        </div>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">Custom-Neural-Net-Creator 2.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
       </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Custom-Neural-Net-Creator</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to Custom-Neural-Net-Creator’s documentation!</li>
-      <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="welcome-to-custom-neural-net-creator-s-documentation">
-<h1>Welcome to Custom-Neural-Net-Creator’s documentation!<a class="headerlink" href="#welcome-to-custom-neural-net-creator-s-documentation" title="Link to this heading"></a></h1>
-<div class="toctree-wrapper compound">
-</div>
-</section>
-<section id="custom-neural-net-creator-package">
-<h1>custom_neural_net_creator package<a class="headerlink" href="#custom-neural-net-creator-package" title="Link to this heading"></a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
-</section>
-<section id="module-src.custom_neural_net_creator.activation_functions">
-<span id="custom-neural-net-creator-activation-functions-module"></span><h2>custom_neural_net_creator.activation_functions module<a class="headerlink" href="#module-src.custom_neural_net_creator.activation_functions" title="Link to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.relu">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">relu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.relu" title="Link to this definition"></a></dt>
-<dd><p>Calculate the ReLU (Rectified Linear Unit) activation function.</p>
-<p>This function computes the ReLU activation function for the given input data <cite>x</cite>. The ReLU function
-is commonly used in neural networks and returns the maximum of 0 and the input value for each element
-of the input array. It effectively introduces non-linearity to the network.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The output of the ReLU activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.relu_derivative">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">relu_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.relu_derivative" title="Link to this definition"></a></dt>
-<dd><p>Calculate the derivative of the ReLU (Rectified Linear Unit) activation function.</p>
-<p>This function computes the derivative of the ReLU activation function for the given input data <cite>x</cite>.
-The ReLU derivative is used in backpropagation to calculate gradients during neural network training.
-It returns the result of the ReLU derivative applied to each element of the input array.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The derivative of the ReLU activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.sigmoid">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">sigmoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.sigmoid" title="Link to this definition"></a></dt>
-<dd><p>Calculate the sigmoid activation function.</p>
-<p>This function computes the sigmoid activation function for the given input data <cite>x</cite>. The sigmoid
-function maps input values to the range (0, 1), making it suitable for binary classification problems.
-It returns the result of the sigmoid activation applied to each element of the input array.
-Args:</p>
-<blockquote>
-<div><p>x (npt.NDArray): The input data.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>Returns:</dt><dd><p>npt.NDArray: The output of sigmoid activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.sigmoid_derivative">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">sigmoid_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.sigmoid_derivative" title="Link to this definition"></a></dt>
-<dd><p>Calculate the derivative of the sigmoid activation function.</p>
-<p>This function computes the derivative of the sigmoid activation function for the given input data <cite>x</cite>.
-The sigmoid derivative is used in backpropagation to calculate gradients during neural network training.
-It returns the result of the sigmoid derivative applied to each element of the input array.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The derivative of the sigmoid activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.tanh">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">tanh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.tanh" title="Link to this definition"></a></dt>
-<dd><p>Calculate the hyperbolic tangent (tanh) activation function.</p>
-<p>This function computes the hyperbolic tangent (tanh) activation function for the given input data <cite>x</cite>.
-The tanh function maps input values to the range (-1, 1) and is used in neural networks to introduce
-non-linearity. It returns the result of the tanh activation applied to each element of the input array.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The output of the tanh activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_functions.tanh_prime">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_functions.</span></span><span class="sig-name descname"><span class="pre">tanh_prime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_functions.tanh_prime" title="Link to this definition"></a></dt>
-<dd><p>Calculate the derivative of the hyperbolic tangent (tanh) activation function.</p>
-<p>This function computes the derivative of the hyperbolic tangent (tanh) activation function for the given
-input data <cite>x</cite>. The tanh derivative is used in backpropagation to calculate gradients during neural
-network training. It returns the result of the tanh derivative applied to each element of the input array.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The derivative of the tanh activation function.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="module-src.custom_neural_net_creator.activation_layer">
-<span id="custom-neural-net-creator-activation-layer-module"></span><h2>custom_neural_net_creator.activation_layer module<a class="headerlink" href="#module-src.custom_neural_net_creator.activation_layer" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_layer.ActivationLayer">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.activation_layer.</span></span><span class="sig-name descname"><span class="pre">ActivationLayer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">activation_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">relu</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">sigmoid</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tanh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">activation_derivative</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">relu_derivative</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">sigmoid_derivative</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tanh_prime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_layer.ActivationLayer.backward_prop">
-<span class="sig-name descname"><span class="pre">backward_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dE_dY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer.backward_prop" title="Link to this definition"></a></dt>
-<dd><p>This method performs backward propagation through the Activation Layer. It computes the gradient
-of the error with respect to the layer’s input by multiplying the activation derivative with
-∂E/∂Y. Since there are no parameters to optimize in this layer, it directly returns the gradient
-of the error with respect to the input, which can be used for backpropagation in previous layers.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>dE_dY (npt.NDArray): The gradient of the error function.
-learning_rate (float): The learning rate for perorming gradient descent.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The gradient of the error with respect to current layer’s input.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.activation_layer.ActivationLayer.forward_prop">
-<span class="sig-name descname"><span class="pre">forward_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.activation_layer.ActivationLayer.forward_prop" title="Link to this definition"></a></dt>
-<dd><p>Perform forward propagation through the Activation Layer.</p>
-<p>This method computes the forward propagation of input data through the Activation Layer. It saves
-the input <cite>x</cite> for later use in backpropagation and passes the input through the specified activation
-function. The result is returned as the output of the layer.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data for the activation layer.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The output of the activation layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-src.custom_neural_net_creator.dense">
-<span id="custom-neural-net-creator-dense-module"></span><h2>custom_neural_net_creator.dense module<a class="headerlink" href="#module-src.custom_neural_net_creator.dense" title="Link to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.dense.Dense">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.dense.</span></span><span class="sig-name descname"><span class="pre">Dense</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.custom_neural_net_creator.dense.Dense" title="Link to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.dense.Dense.backward_prop">
-<span class="sig-name descname"><span class="pre">backward_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dE_dY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.dense.Dense.backward_prop" title="Link to this definition"></a></dt>
-<dd><p>Perform backward propagation through the Dense layer and update weights and biases.</p>
-<p>This method performs backward propagation through the Dense layer. It calculates the gradients
-of the error with respect to the layer’s weights, biases, and input. The gradients are then used
-to update the weights and biases using gradient descent. The method returns the gradient of the
-error with respect to the layer’s input, to be used for backpropagation in previous layers.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>dE_dY (npt.NDArray): The gradient of the error function.
-learning_rate (float): The learning rate for perorming gradient descent.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The gradient of the error with respect to current layer’s input.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.dense.Dense.forward_prop">
-<span class="sig-name descname"><span class="pre">forward_prop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.dense.Dense.forward_prop" title="Link to this definition"></a></dt>
-<dd><p>Perform forward propagation through the Dense layer.</p>
-<p>This method computes the forward propagation of input data through the Dense layer. 
-The output is calculated by performing a dot product between the input and the layer’s weights, 
-adding the bias, and returning the result. It saves
-the input <cite>x</cite> for later use in backpropagation.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>x (npt.NDArray): The input data of the Dense layer.</p>
-</dd>
-<dt>Returns:</dt><dd><p>npt.NDArray: The output of the Dense layer.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-src.custom_neural_net_creator.loss_functions">
-<span id="custom-neural-net-creator-loss-functions-module"></span><h2>custom_neural_net_creator.loss_functions module<a class="headerlink" href="#module-src.custom_neural_net_creator.loss_functions" title="Link to this heading"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.loss_functions.mean_squared_error">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.loss_functions.</span></span><span class="sig-name descname"><span class="pre">mean_squared_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.loss_functions.mean_squared_error" title="Link to this definition"></a></dt>
-<dd><p>Calculate the mean squared error between acuatl and predicted values.</p>
-<p>This function computes the mean squared error (MSE) between the actual and predicted values.
-It takes two NumPy arrays, <cite>actual</cite> and <cite>prediction</cite>, and calculates the squared difference 
-between corresponding elements, then returns the mean of those squared differences. Lower values 
-indicate better performance during training.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>actual (npt.NDArray): The actual values.
-prediction (npt.NDArray): The predicted values.</p>
-</dd>
-<dt>Returns:</dt><dd><p>float: The mean squared error between actual and predicted values.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="src.custom_neural_net_creator.loss_functions.mean_squared_error_derivative">
-<span class="sig-prename descclassname"><span class="pre">src.custom_neural_net_creator.loss_functions.</span></span><span class="sig-name descname"><span class="pre">mean_squared_error_derivative</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">actual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prediction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dtype</span><span class="p"><span class="pre">[</span></span><span class="pre">ScalarType</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#src.custom_neural_net_creator.loss_functions.mean_squared_error_derivative" title="Link to this definition"></a></dt>
-<dd><p>Calculate the derivative of the mean squared error with respect to predicted values.</p>
-<p>This function computes the mean squared error (MSE) between the actual and predicted values.
-It takes two NumPy arrays, <cite>actual</cite> and <cite>prediction</cite>, and calculates the squared difference 
-between corresponding elements, then returns the mean of those squared differences. MSE is a
-common metric used to measure the accuracy of regression models. Lower values indicate better 
-performance during training.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>actual (npt.NDArray): The actual values.
-prediction (npt.NDArray): The predicted values.</p>
-</dd>
-<dt>Returns:</dt><dd><p>float: The derivative of the mean squared error with respect to predicted values.</p>
-</dd>
-</dl>
-</dd></dl>
-
-</section>
-<section id="custom-neural-net-creator-model-module">
-<h2>custom_neural_net_creator.model module<a class="headerlink" href="#custom-neural-net-creator-model-module" title="Link to this heading"></a></h2>
-</section>
-<section id="module-src.custom_neural_net_creator">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src.custom_neural_net_creator" title="Link to this heading"></a></h2>
-</section>
-</section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  
+  <span class="sidebar-brand-text">Custom-Neural-Net-Creator 2.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="API%20References.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of API Reference</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="Model.html">Model Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dense%20Layers.html">Dense Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Activation%20Layers.html">Activation Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Activation%20Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loss%20Functions.html">Loss Functions</a></li>
 </ul>
-</section>
+</li>
+</ul>
 
+</div>
+</div>
 
-           </div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
           </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2023, Yogesh Seenichamy.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
         </div>
-      </div>
-    </section>
-  </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
+        <article role="main">
+          <section id="welcome-to-custom-neural-net-creator-s-documentation">
+<h1>Welcome to Custom-Neural-Net-Creator’s documentation!<a class="headerlink" href="#welcome-to-custom-neural-net-creator-s-documentation" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="API%20References.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Model.html">Model Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Dense%20Layers.html">Dense Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Activation%20Layers.html">Activation Layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Activation%20Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Loss%20Functions.html">Loss Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
 
-</body>
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="API%20References.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">API Reference</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Yogesh Seenichamy
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=60dbed4a"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=32e29ea5"></script>
+    </body>
 </html>

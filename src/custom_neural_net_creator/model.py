@@ -1,8 +1,8 @@
 import numpy as np
 from typing import List, Union, Optional
-from dense import Dense
-from activation_layer import ActivationLayer
-from loss_functions import mean_squared_error, mean_squared_error_derivative
+from custom_neural_net_creator.dense import Dense
+from custom_neural_net_creator.activation_layer import ActivationLayer
+from custom_neural_net_creator.loss_functions import mean_squared_error, mean_squared_error_derivative
 
 class Model():
     def __init__(self) -> None:
@@ -83,9 +83,7 @@ class Model():
             loss_derivative (mean_squared_error_derivative): The derivative of the loss function.
             epochs (Optional[int], optional): Number of training epochs. Defaults to 100.
             learning_rate (Optional[float], optional): Learning rate for gradient descent. Defaults to 0.01.
-            verbosity (Optional[int], optional): Verbosity level for printing training progress. 
-                                                  0 - No output, 1 - Print every 100 epochs, 
-                                                  2 - Print every 10 epochs. Defaults to 1.
+            verbosity (Optional[int], optional): Verbosity level for printing training progress. 0 - No output, 1 - Print every 100 epochs, 2 - Print every 10 epochs. Defaults to 1.
         """
         x = np.array([[i] for i in x])
         y = np.array([[i] for i in y])

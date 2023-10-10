@@ -7,6 +7,7 @@ def sigmoid(x: npt.NDArray) -> npt.NDArray:
     This function computes the sigmoid activation function for the given input data `x`. The sigmoid
     function maps input values to the range (0, 1), making it suitable for binary classification problems.
     It returns the result of the sigmoid activation applied to each element of the input array.
+
     Args:
         x (npt.NDArray): The input data.
 
