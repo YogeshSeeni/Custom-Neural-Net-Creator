@@ -1,5 +1,5 @@
 # Custom Neural Net Creator
-[![Upload Python Package](https://github.com/YogeshSeeni/NeuralNetworkModule/actions/workflows/python-publish.yml/badge.svg)](https://github.com/YogeshSeeni/NeuralNetworkModule/actions/workflows/python-publish.yml)
+[![Upload Python Package](https://github.com/YogeshSeeni/NeuralNetworkModule/actions/workflows/python-publish.yml/badge.svg)](https://pypi.org/project/custom-neural-net-creator/)
 [![Documentation Status](https://readthedocs.org/projects/custom-neural-net-creator/badge/?version=latest)](https://custom-neural-net-creator.readthedocs.io/en/latest/?badge=latest)
 ## Overview
 
